@@ -33,8 +33,8 @@ Modificación de Solicitudes: Modifica las solicitudes recibidas para ajustarlas
 Comunicación con Servidores Web: Inicia un nuevo socket para enviar la solicitud modificada a uno de los servidores web seleccionados.
 Recepción de Respuestas: Espera la respuesta del servidor web y la recibe a través del socket.
 Envío de Respuestas al Cliente: Envía la respuesta recibida del servidor web de vuelta al cliente que hizo la solicitud original.
-
 Manejo de Caché: Si la caché está habilitada y la respuesta ya existe en la caché y es válida, la enviará directamente al cliente sin contactar al servidor web, mejorando la eficiencia y reduciendo la latencia.
+
 * **3. Servidores de Aplicación Web:**
 Recepción de Solicitudes del Proxy: Cada servidor web recibe solicitudes del servidor proxy, las cuales han sido equitativamente distribuidas.
 Procesamiento de Solicitudes: Cada servidor procesa la solicitud, generando una respuesta apropiada basada en los recursos solicitados (archivos HTML, CSS, imágenes, etc.).
@@ -42,6 +42,11 @@ Envío de Respuestas al Proxy: Después de procesar la solicitud, el servidor en
 
 
 ## Entorno de Desarrollo y Configuraciones
+**Servidor y Cliente HTTP:**
+- **Sistema Operativo**: Ubuntu 20.04 LTS o superior.
+- **Compilador**: GCC versión 9.3.0 o superior para C.
+- **Intérprete de Python**: Python 3.8 o superior para el cliente HTTP.
+- **Librerías adicionales**: No se requieren librerías externas adicionales gracias a la utilización de la API de Berkeley para sockets en C y el módulo socket estándar en Python.
 
 ## Instalación de Librerías
 
