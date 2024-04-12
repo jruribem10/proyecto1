@@ -14,12 +14,13 @@ El proyecto tiene como objetivo fundamental desarrollar un sistema de proxy inve
 * **Balanceador de carga:** Un dispositivo o software que distribuye el tráfico de red o las solicitudes a múltiples servidores basándose en diversos factores como la capacidad de carga, prioridad y disponibilidad de servidor. Su objetivo es optimizar el uso de recursos, maximizar el rendimiento, reducir la latencia y asegurar la disponibilidad.
 * **HTTP:** El Protocolo de Transferencia de Hipertexto es el protocolo de comunicación que se utiliza para intercambiar información en la World Wide Web, definiendo cómo se transmiten y formatean los mensajes entre clientes y servidores.
 * **Berkeley API:** Una implementación específica de la API de sockets, originaria de la Universidad de Berkeley. Es ampliamente utilizada para la comunicación entre aplicaciones a través de redes en sistemas Unix y sistemas operativos similares a Unix.
+* 
 ## Arquitectura
 La arquitectura del proyecto consta de los siguientes componentes:
-
 * Aplicación Cliente: Envía solicitudes HTTP y recibe respuestas.
 * HTTP Proxy + Balanceador de Carga: Actúa como intermediario entre el cliente y los servidores, distribuyendo las solicitudes entre varios servidores backend.
 * Servidores de Aplicación Web: Un conjunto de tres servidores donde cada uno ejecuta la misma aplicación web replicada. Se puede usar NGINX o Apache como servidor web.
+* 
 ## Funcionamiento
 * **1. Aplicación Cliente:**
 Inicio: El cliente inicia una solicitud HTTP introduciendo la URL y el puerto de destino, usualmente a través de una interfaz de línea de comandos.
@@ -48,6 +49,20 @@ Envío de Respuestas al Proxy: Después de procesar la solicitud, el servidor en
 - **Intérprete de Python**: Python 3.8 o superior para el cliente HTTP.
 - **Librerías adicionales**: No se requieren librerías externas adicionales gracias a la utilización de la API de Berkeley para sockets en C y el módulo socket estándar en Python.
 
-## Instalación de Librerías
-
 ## Ejecución
+**Pasos para la configuración del entorno local:**
+1. **Instalar Ubuntu 20.04 LTS** en una máquina virtual o física.
+2. **Instalar GCC**: Utilizar `sudo apt install build-essential` para instalar GCC y herramientas relacionadas.
+3. **Instalar Python**: Ejecutar `sudo apt install python3.8`.
+4. **Configurar direcciones IP estáticas** para el desarrollo local en `/etc/network/interfaces`.
+5. **Clonar el repositorio del proyecto** desde GitHub utilizando `git clone [URL del repositorio]`.
+6. **Compilar el servidor proxy** utilizando el comando `gcc -pthread -o httproxy httproxy.c`.
+7. **Ejecutar pruebas unitarias** para asegurarse de que todas las componentes están funcionando correctamente.
+
+**Despliegue en Producción:**
+1. **Configurar una instancia de AWS EC2** con Ubuntu 20.04.
+2. **Instalar las dependencias** como se describió en la sección de configuración local.
+3. **Transferir los archivos del proyecto** al servidor utilizando SCP o similar.
+4. **Configurar el balanceador de carga de AWS** (si aplicable) para distribuir las peticiones entre múltiples instancias.
+5. **Configurar las reglas de firewall y grupos de seguridad** en AWS para permitir tráfico en el puerto 8080.
+6. **Iniciar el servidor proxy** y el cliente para pruebas de conectividad y rendimiento.
