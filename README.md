@@ -71,18 +71,28 @@ Envío de Respuestas al Proxy: Después de procesar la solicitud, el servidor en
 
 
 ## **Aspectos Logrados y No logrados**
-Implementación de Balanceador de Carga y Proxy HTTP:
+* Desarrollo y Despliegue de los Tres Servidores de Aplicación Web:
+Hemos desarrollado y desplegado exitosamente tres servidores de aplicación web en AWS, configurados para servir una página web estática replicada. Esto garantiza alta disponibilidad y redundancia, elementos críticos para el mantenimiento de un servicio web confiable.
+* Implementación de Round Robin para el Balanceo de Carga:
+Implementamos un balanceador de carga utilizando el algoritmo Round Robin, que distribuye de manera equitativa las solicitudes entrantes entre los tres servidores web. Esto mejora la distribución de la carga y optimiza el uso de los recursos.
+* Implementación del Cliente en Python con Todos sus Requisitos:
+El cliente HTTP fue implementado en Python, cumpliendo con todos los requisitos del proyecto, incluyendo el manejo de métodos GET, HEAD, y POST, y la capacidad de trabajar a través de un servidor proxy.
+Manejo de Archivos de Registro:
+* Hemos establecido un sistema efectivo de registro que documenta detalladamente todas las operaciones del servidor y del cliente. Los registros incluyen datos como las fechas, horas, solicitudes HTTP y respuestas, proporcionando una herramienta esencial para la monitorización y el análisis de la actividad del sistema.
+* Implementación de Balanceador de Carga y Proxy HTTP:
 Logramos implementar un servidor proxy que además actúa como balanceador de carga, utilizando un algoritmo Round Robin para distribuir las solicitudes entre tres servidores de aplicación diferentes. Esta funcionalidad es crucial para el manejo eficiente del tráfico y la disponibilidad del servicio.
-
-Concurrencia y Manejo de Múltiples Clientes:
+* Concurrencia y Manejo de Múltiples Clientes:
 El servidor puede manejar múltiples conexiones simultáneas gracias a la implementación de hilos, lo que permite procesar las solicitudes de manera concurrente sin bloquear a los usuarios mientras se manejan otras solicitudes.
-
-Caching de Respuestas:
+* Caching de Respuestas:
 Implementamos un sistema de caché que almacena respuestas a solicitudes previas, lo que reduce el tiempo de respuesta para solicitudes repetidas y disminuye la carga sobre los servidores de aplicación.
-Registro y Depuración:
+* Registro y Depuración:
+Desarrollamos un sistema de registro que documenta todas las solicitudes y respuestas, proporcionando una herramienta vital para la depuración y el monitoreo del sistema.
 
 **Aspecto no logrados**
-
-Desarrollamos un sistema de registro que documenta todas las solicitudes y respuestas, proporcionando una herramienta vital para la depuración y el monitoreo del sistema.
+Optimización de la Caché:
+Aunque el sistema de caché funciona, no implementamos políticas avanzadas de expiración o invalidación de caché, ni manejamos adecuadamente los encabezados HTTP que podrían influir en las decisiones de caché, como Cache-Control o ETag.
+Manejo de Errores y Recuperación:
+La robustez del manejo de errores podría mejorarse. Aunque se manejan errores básicos de red y sistema, no hay una política exhaustiva para recuperarse de todos los tipos posibles de fallos en tiempo de ejecución.
 ## **Conclusiones**
+
 ## **Referencias**
