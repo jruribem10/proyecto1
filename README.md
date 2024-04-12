@@ -20,7 +20,8 @@ La arquitectura del proyecto consta de los siguientes componentes:
 * Aplicación Cliente: Envía solicitudes HTTP y recibe respuestas.
 * HTTP Proxy + Balanceador de Carga: Actúa como intermediario entre el cliente y los servidores, distribuyendo las solicitudes entre varios servidores backend.
 * Servidores de Aplicación Web: Un conjunto de tres servidores donde cada uno ejecuta la misma aplicación web replicada. Se puede usar NGINX o Apache como servidor web.
-* 
+  ![imagen](https://github.com/jruribem10/proyecto1/assets/73508381/7e1ce35e-e627-41bc-a088-f2c45c4bc94d)
+
 ## Funcionamiento
 * **1. Aplicación Cliente:**
 Inicio: El cliente inicia una solicitud HTTP introduciendo la URL y el puerto de destino, usualmente a través de una interfaz de línea de comandos.
