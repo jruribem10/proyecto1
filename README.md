@@ -67,3 +67,22 @@ Envío de Respuestas al Proxy: Después de procesar la solicitud, el servidor en
 4. **Configurar el balanceador de carga de AWS** (si aplicable) para distribuir las peticiones entre múltiples instancias.
 5. **Configurar las reglas de firewall y grupos de seguridad** en AWS para permitir tráfico en el puerto 8080.
 6. **Iniciar el servidor proxy** y el cliente para pruebas de conectividad y rendimiento.
+
+
+
+## **Aspectos Logrados y No logrados**
+Implementación de Balanceador de Carga y Proxy HTTP:
+Logramos implementar un servidor proxy que además actúa como balanceador de carga, utilizando un algoritmo Round Robin para distribuir las solicitudes entre tres servidores de aplicación diferentes. Esta funcionalidad es crucial para el manejo eficiente del tráfico y la disponibilidad del servicio.
+
+Concurrencia y Manejo de Múltiples Clientes:
+El servidor puede manejar múltiples conexiones simultáneas gracias a la implementación de hilos, lo que permite procesar las solicitudes de manera concurrente sin bloquear a los usuarios mientras se manejan otras solicitudes.
+
+Caching de Respuestas:
+Implementamos un sistema de caché que almacena respuestas a solicitudes previas, lo que reduce el tiempo de respuesta para solicitudes repetidas y disminuye la carga sobre los servidores de aplicación.
+Registro y Depuración:
+
+**Aspecto no logrados**
+
+Desarrollamos un sistema de registro que documenta todas las solicitudes y respuestas, proporcionando una herramienta vital para la depuración y el monitoreo del sistema.
+## **Conclusiones**
+## **Referencias**
