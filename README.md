@@ -93,6 +93,17 @@ Optimización de la Caché:
 Aunque el sistema de caché funciona, no implementamos políticas avanzadas de expiración o invalidación de caché, ni manejamos adecuadamente los encabezados HTTP que podrían influir en las decisiones de caché, como Cache-Control o ETag.
 Manejo de Errores y Recuperación:
 La robustez del manejo de errores podría mejorarse. Aunque se manejan errores básicos de red y sistema, no hay una política exhaustiva para recuperarse de todos los tipos posibles de fallos en tiempo de ejecución.
+Manejo de Errores y Recuperación:
+La robustez del manejo de errores podría mejorarse. Aunque se manejan errores básicos de red y sistema, no hay una política exhaustiva para recuperarse de todos los tipos posibles de fallos en tiempo de ejecución.
+Despliegue del Servidor en un Entorno de Producción:
+No logramos desplegar el servidor en un entorno de producción real. El sistema se probó y demostró en un entorno de desarrollo local y simulado, lo que puede no reflejar completamente el rendimiento y los desafíos en un entorno de producción real.
+Descarga y Manejo de Imágenes:
+El cliente no fue capaz de descargar ni manejar imágenes u otros tipos de archivos multimedia. Esta limitación reduce la funcionalidad del cliente, especialmente en aplicaciones modernas donde el contenido multimedia es prevalente.
 ## **Conclusiones**
 
 ## **Referencias**
+• https://beej.us/guide/bgnet/
+• https://beej.us/guide/bgc/
+• https://www.geeksforgeeks.org/tcp-server-client-implementation-in-c/
+• RFC 7230 - Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing
+(ietf.org)
